@@ -1,0 +1,5 @@
+epicsEnvSet("IOC","iocreasonTest")
+epicsEnvSet("TOP","/opt/epics/modules/dynamicAsyn-1.1.0")
+epicsEnvSet("ASYN","/opt/epics/base/../modules/asyn")
+epicsEnvSet("EPICS_BASE","/opt/epics/base")
+epicsEnvSet("MODULES","/opt/epics/base/../modules")

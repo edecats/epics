@@ -1,0 +1,13 @@
+startup = "/opt/epics/modules/asyn-4-38/iocBoot/ioctestUSBTMC"
+putenv("IOC=ioctestUSBTMC")
+top = "/opt/epics/modules/asyn-4-38"
+putenv("TOP=/opt/epics/modules/asyn-4-38")
+topbin = "/opt/epics/modules/asyn-4-38/bin/linux-x86_64"
+sncseq = "/opt/epics/base/../modules/seq"
+putenv("SNCSEQ=/opt/epics/base/../modules/seq")
+sncseqbin = "/opt/epics/base/../modules/seq/bin/linux-x86_64"
+epics_base = "/opt/epics/base"
+putenv("EPICS_BASE=/opt/epics/base")
+epics_basebin = "/opt/epics/base/bin/linux-x86_64"
+modules = "/opt/epics/base/../modules"
+putenv("MODULES=/opt/epics/base/../modules")

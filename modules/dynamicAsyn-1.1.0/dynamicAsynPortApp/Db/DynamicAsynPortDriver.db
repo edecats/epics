@@ -1,0 +1,9 @@
+
+record(longout, "$(P)$(R)ListIOScans")
+{
+	field(DESC, "Listing IO scans")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR))ListIOScans")
+	field(PINI, "YES")
+	field(VAL,  "1")
+}

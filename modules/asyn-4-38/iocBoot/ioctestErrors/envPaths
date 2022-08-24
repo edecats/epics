@@ -1,0 +1,5 @@
+epicsEnvSet("IOC","ioctestErrors")
+epicsEnvSet("TOP","/opt/epics/modules/asyn-4-38")
+epicsEnvSet("SNCSEQ","/opt/epics/base/../modules/seq")
+epicsEnvSet("EPICS_BASE","/opt/epics/base")
+epicsEnvSet("MODULES","/opt/epics/base/../modules")

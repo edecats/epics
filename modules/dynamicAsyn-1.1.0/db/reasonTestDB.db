@@ -1,0 +1,121 @@
+
+record(longout, "DO_INT32")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))INT32(str1)")
+}
+
+record(longout, "DO_INT16")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))INT16(str2)")
+}
+
+record(longout, "DO_BOOL")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BOOL(name_bool)")
+}
+
+record(longout, "DO_BYTE")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) BYTE(name_BYTE)")
+}
+
+record(longout, "DO_WORD")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) WORD(name_WORD)")
+}
+
+record(longout, "DO_DWORD")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) DWORD(name_DWORD)")
+}
+
+record(longout, "DO_SINT")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) SINT(name_SINT)")
+}
+
+record(longout, "DO_USINT")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) USINT(name_USINT)")
+}
+
+record(longout, "DO_INT")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) INT(name_INT)")
+}
+
+record(longout, "DO_UINT16")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) UINT16(name_UINT16)")
+}
+
+record(longout, "DO_DINT")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) DINT(name_DINT)")
+}
+
+record(longout, "DO_UDINT")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) UDINT(name_UDINT)")
+}
+
+record(ao, "DO_REAL")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynFloat64")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) REAL(name_REAL)")
+}
+
+record(ao, "DO_LREAL")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynFloat64")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) LREAL(name_LREAL)")
+}
+
+record(ao, "DO_fake")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynFloat64")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT)) fake")
+}
+
+record(longin, "DI_1")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))INT32(str3, group1, 1000)")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "DI_2")
+{
+	field(DESC, "Position")
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))INT16(str4, group3, 500)")
+    field(SCAN, "I/O Intr")
+}

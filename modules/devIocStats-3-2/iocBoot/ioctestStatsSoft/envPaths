@@ -1,0 +1,5 @@
+epicsEnvSet("IOC","ioctestStatsSoft")
+epicsEnvSet("TOP","/opt/epics/modules/devIocStats-3-2")
+epicsEnvSet("EPICS_BASE","/opt/epics/base")
+epicsEnvSet("MODULES","/opt/epics/base/../modules")
+epicsEnvSet("SNCSEQ","/opt/epics/base/../modules/seq")

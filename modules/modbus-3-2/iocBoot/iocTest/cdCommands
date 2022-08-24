@@ -1,0 +1,13 @@
+startup = "/opt/epics/modules/modbus-3-2/iocBoot/iocTest"
+putenv("IOC=iocTest")
+top = "/opt/epics/modules/modbus-3-2"
+putenv("TOP=/opt/epics/modules/modbus-3-2")
+topbin = "/opt/epics/modules/modbus-3-2/bin/linux-x86_64"
+asyn = "/opt/epics/base/../modules/asyn"
+putenv("ASYN=/opt/epics/base/../modules/asyn")
+asynbin = "/opt/epics/base/../modules/asyn/bin/linux-x86_64"
+epics_base = "/opt/epics/base"
+putenv("EPICS_BASE=/opt/epics/base")
+epics_basebin = "/opt/epics/base/bin/linux-x86_64"
+modules = "/opt/epics/base/../modules"
+putenv("MODULES=/opt/epics/base/../modules")
