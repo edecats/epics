@@ -1,0 +1,343 @@
+record(int64in,"M1833:CommWatchdogReadback") {
+    field(DTYP,"asynInt64")
+    field(INP,"@asyn(ReadInputRegister,2)")
+    field(SCAN, "1 second")
+}
+
+record(int64in,"M1833:CurrentAccessLevel") {
+    field(DTYP,"asynInt64")
+    field(INP,"@asyn(ReadInputRegister,5)")
+    field(SCAN, "1 second")
+}
+
+record(bi,"M1833:StbInlkExist") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask(ReadInputRegister, 4, 0x1)")
+    field(SCAN, "1 second")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(bi,"M1833:HvInlkExist") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask(ReadInputRegister,4, 0x2)")
+    field(SCAN, "1 second")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(bi,"M1833:TrigInlkExist") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask(ReadInputRegister,4, 0x4)")
+    field(SCAN, "1 second")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(bi,"M1833:WarningExist") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask(ReadInputRegister,4, 0x8)")
+    field(SCAN, "1 second")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(bi,"M1833:OutsideLimits") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask(ReadInputRegister,4, 0x16)")
+    field(SCAN, "1 second")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(bi,"M1833:Error") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask(ReadInputRegister,4, 0x32)")
+    field(SCAN, "1 second")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(bo,"M1833:Reset") {
+    field(DTYP,"asynUInt32Digital")
+    field(OUT,"@asynMask(WriteHoldingRegister,2, 0x1)")
+    field(ZNAM,"False")
+    field(ONAM,"True")
+}
+
+record(int64out,"M1833:CommWatchdogInput") {
+    field(DTYP,"asynInt64")
+    field(OUT,"@asyn(WriteHoldingRegister,0)")
+}
+
+record(int64out,"M1833:ModTargetState") {
+    field(DTYP,"asynInt64")
+    field(OUT,"@asyn(WriteHoldingRegister,1)")
+}
+
+record(int64in, "M1833:RequestedTargetState"){
+    field(DTYP, "asynInt64")
+    field(INP, "@asyn(ReadInputRegister,3)")
+    field(SCAN, "1 second")
+}
+
+# todo: add reset bit
+
+record(ao, "M1833:CCPSVoltSet"){
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn(WriteHoldingRegisterFloat, 100)FLOAT32_LE")
+    field(HOPR, 1200)
+    field(LOPR, 0)
+    field(EGU, "V")
+}
+
+
+#Note: this is the only tag listed for controlling current setpoint
+#Setting it returns no "errors" but does not change the value of CurrentSetRead as expected
+
+# NOT YET SUPPORTED
+record(ao, "M1833:FilCurrentSet"){
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn(WriteHoldingRegisterFloat, 200)FLOAT32_LE")
+    field(HOPR, 30)
+    field(LOPR, 0)
+    field(EGU, "A")
+}
+
+
+
+record(ao, "M1833:PulsWidSet"){
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn(WriteHoldingRegisterFloat, 300)FLOAT32_LE")
+    field(HOPR, 5)
+    field(LOPR, 1)
+    field(EGU, "us")
+}
+
+record(ai, "M1833:FilamentTimeRemaining") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 6)FLOAT32_LE")
+    field(SCAN, "1 second")
+}
+
+record(ai, "M1833:PulseRepFreq") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,8)FLOAT32_LE")
+    field(SCAN, "1 second")
+}
+
+record(ai, "M1833:CCPSVoltSetRead") {
+    field(DTYP,"asynFloat64")
+    field(INP,"@asyn(ReadInputRegisterFloat,21)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "V")
+}
+
+record(ai, "M1833:CurrentSetRead") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,23)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "A")
+}
+
+record(ai, "M1833:PlswthSetRead") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,25)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "us")
+}
+
+record(ai, "M1833:CCPS1Voltage") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,100)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "V")
+}
+
+record(ai, "M1833:CCPS2Voltage") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,102)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "V")
+}
+
+record(ai, "M1833:FilPSCurrent") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,200)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "A")
+}
+
+record(ai, "M1833:FilPSVoltage") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,202)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "V")
+}
+
+record(ai, "M1833:IonPump1Current") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,300)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "nA")
+}
+
+record(ai, "M1833:IonPump1Voltage") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,302)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "kV")
+}
+
+record(ai, "M1833:SolPS1Current") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,400)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "A")
+}
+
+record(ai, "M1833:SolPS1Voltage") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,402)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "V")
+}
+
+record(ai, "M1833:CurrentTrans") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,500)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "A")
+}
+
+record(ai, "M1833:CapVoltDiv") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,502)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "kV")
+}
+
+record(ai, "M1833:FWHMPulsWid") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat,504)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "us")
+}
+
+record(ai, "M1833:OilTemp") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 600)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "C")
+}
+
+record(ai, "M1833:OilLevel") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 602)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "mm")
+}
+
+record(ai, "M1833:InletWaterTemp") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 700)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "C")
+}
+
+record(ai, "M1833:ColRtnTemp") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 702)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "C")
+}
+
+record(ai, "M1833:SolTemp") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 704)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "C")
+}
+
+record(ai, "M1833:BodyRtnTemp") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 706)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "C")
+}
+
+record(ai, "M1833:RFOutFwd") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 820)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "dBm")
+}
+
+record(ai, "M1833:RFOutRef") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 822)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "dBm")
+}
+
+record(ai, "M1833:RFOutVSWR") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 824)FLOAT32_LE")
+    field(SCAN, "1 second")
+}
+
+record(ai, "M1833:RFOutPulsWid") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 826)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "µs")
+}
+
+record(ai, "M1833:CoolWtrQ1") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 900)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}
+
+record(ai, "M1833:CoolWtrQ2") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 902)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}
+
+record(ai, "M1833:CoolWtrQ3") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 904)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}
+
+record(ai, "M1833:CoolWtrQ4") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 906)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}
+
+record(ai, "M1833:CoolWtrQ5") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 908)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}
+
+record(ai, "M1833:CoolWtrQ6") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 910)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}
+
+record(ai, "M1833:CoolWtrQ7") {
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn(ReadInputRegisterFloat, 912)FLOAT32_LE")
+    field(SCAN, "1 second")
+    field(EGU, "l/m")
+}

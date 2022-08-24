@@ -1,0 +1,7 @@
+epicsEnvSet("IOC","iocnewIOC")
+epicsEnvSet("TOP","/opt/epics/test/newIOC")
+epicsEnvSet("MODULES","/opt/epics/modules")
+epicsEnvSet("ASYN","/opt/epics/modules/asyn")
+epicsEnvSet("STREAM","/opt/epics/modules/stream")
+epicsEnvSet("MODBUS","/opt/epics/modules/modbus")
+epicsEnvSet("EPICS_BASE","/opt/epics/base")
